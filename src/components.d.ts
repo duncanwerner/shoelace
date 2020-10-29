@@ -919,6 +919,136 @@ export namespace Components {
          */
         "value": string | Array<string>;
     }
+    interface SlShadyInput {
+        /**
+          * The input's autocaptialize attribute.
+         */
+        "autocapitalize": string;
+        /**
+          * The input's autocomplete attribute.
+         */
+        "autocomplete": string;
+        /**
+          * The input's autocorrect attribute.
+         */
+        "autocorrect": string;
+        /**
+          * The input's autofocus attribute.
+         */
+        "autofocus": boolean;
+        /**
+          * Set to true to add a clear button when the input is populated.
+         */
+        "clearable": boolean;
+        /**
+          * Set to true to disable the input.
+         */
+        "disabled": boolean;
+        /**
+          * The input's inputmode attribute.
+         */
+        "inputmode": 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
+        /**
+          * This will be true when the control is in an invalid state. Validity is determined by props such as `type`, `required`, `minlength`, `maxlength`, and `pattern` using the browser's constraint validation API.
+         */
+        "invalid": boolean;
+        /**
+          * The input's label.
+         */
+        "label": string;
+        /**
+          * The input's maximum value.
+         */
+        "max": number;
+        /**
+          * The maximum length of input that will be considered valid.
+         */
+        "maxlength": number;
+        /**
+          * The input's minimum value.
+         */
+        "min": number;
+        /**
+          * The minimum length of input that will be considered valid.
+         */
+        "minlength": number;
+        /**
+          * The input's name attribute.
+         */
+        "name": string;
+        /**
+          * A pattern to validate input against.
+         */
+        "pattern": string;
+        /**
+          * Set to true to draw a pill-style input with rounded edges.
+         */
+        "pill": boolean;
+        /**
+          * The input's placeholder text.
+         */
+        "placeholder": string;
+        /**
+          * Set to true to make the input readonly.
+         */
+        "readonly": boolean;
+        /**
+          * Removes focus from the input.
+         */
+        "removeFocus": () => Promise<void>;
+        /**
+          * Checks for validity and shows the browser's validation message if the control is invalid.
+         */
+        "reportValidity": () => Promise<boolean>;
+        /**
+          * Set to true to make the input a required field.
+         */
+        "required": boolean;
+        /**
+          * Selects all the text in the input.
+         */
+        "select": () => Promise<void>;
+        /**
+          * Sets a custom validation message. If `message` is not empty, the field will be considered invalid.
+         */
+        "setCustomValidity": (message: string) => Promise<void>;
+        /**
+          * Sets focus on the input.
+         */
+        "setFocus": () => Promise<void>;
+        /**
+          * Replaces a range of text with a new string.
+         */
+        "setRangeText": (replacement: string, start: number, end: number, selectMode?: 'select' | 'start' | 'end' | 'preserve') => Promise<void>;
+        /**
+          * Sets the start and end positions of the text selection (0-based).
+         */
+        "setSelectionRange": (selectionStart: number, selectionEnd: number, selectionDirection?: 'forward' | 'backward' | 'none') => Promise<void>;
+        /**
+          * The input's size.
+         */
+        "size": 'small' | 'medium' | 'large';
+        /**
+          * Enables spell checking on the input.
+         */
+        "spellcheck": boolean;
+        /**
+          * The input's step attribute.
+         */
+        "step": number;
+        /**
+          * Set to true to add a password toggle button for password inputs.
+         */
+        "togglePassword": boolean;
+        /**
+          * The input's type.
+         */
+        "type": 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'url';
+        /**
+          * The input's value attribute.
+         */
+        "value": string;
+    }
     interface SlSkeleton {
         /**
           * Determines which effect the skeleton will use.
@@ -1382,6 +1512,12 @@ declare global {
         prototype: HTMLSlSelectElement;
         new (): HTMLSlSelectElement;
     };
+    interface HTMLSlShadyInputElement extends Components.SlShadyInput, HTMLStencilElement {
+    }
+    var HTMLSlShadyInputElement: {
+        prototype: HTMLSlShadyInputElement;
+        new (): HTMLSlShadyInputElement;
+    };
     interface HTMLSlSkeletonElement extends Components.SlSkeleton, HTMLStencilElement {
     }
     var HTMLSlSkeletonElement: {
@@ -1469,6 +1605,7 @@ declare global {
         "sl-rating": HTMLSlRatingElement;
         "sl-responsive-embed": HTMLSlResponsiveEmbedElement;
         "sl-select": HTMLSlSelectElement;
+        "sl-shady-input": HTMLSlShadyInputElement;
         "sl-skeleton": HTMLSlSkeletonElement;
         "sl-spinner": HTMLSlSpinnerElement;
         "sl-switch": HTMLSlSwitchElement;
@@ -2424,6 +2561,128 @@ declare namespace LocalJSX {
          */
         "value"?: string | Array<string>;
     }
+    interface SlShadyInput {
+        /**
+          * The input's autocaptialize attribute.
+         */
+        "autocapitalize"?: string;
+        /**
+          * The input's autocomplete attribute.
+         */
+        "autocomplete"?: string;
+        /**
+          * The input's autocorrect attribute.
+         */
+        "autocorrect"?: string;
+        /**
+          * The input's autofocus attribute.
+         */
+        "autofocus"?: boolean;
+        /**
+          * Set to true to add a clear button when the input is populated.
+         */
+        "clearable"?: boolean;
+        /**
+          * Set to true to disable the input.
+         */
+        "disabled"?: boolean;
+        /**
+          * The input's inputmode attribute.
+         */
+        "inputmode"?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
+        /**
+          * This will be true when the control is in an invalid state. Validity is determined by props such as `type`, `required`, `minlength`, `maxlength`, and `pattern` using the browser's constraint validation API.
+         */
+        "invalid"?: boolean;
+        /**
+          * The input's label.
+         */
+        "label"?: string;
+        /**
+          * The input's maximum value.
+         */
+        "max"?: number;
+        /**
+          * The maximum length of input that will be considered valid.
+         */
+        "maxlength"?: number;
+        /**
+          * The input's minimum value.
+         */
+        "min"?: number;
+        /**
+          * The minimum length of input that will be considered valid.
+         */
+        "minlength"?: number;
+        /**
+          * The input's name attribute.
+         */
+        "name"?: string;
+        /**
+          * Emitted when the control loses focus.
+         */
+        "onSl-blur"?: (event: CustomEvent<any>) => void;
+        /**
+          * Emitted when the control's value changes.
+         */
+        "onSl-change"?: (event: CustomEvent<any>) => void;
+        /**
+          * Emitted when the clear button is activated.
+         */
+        "onSl-clear"?: (event: CustomEvent<any>) => void;
+        /**
+          * Emitted when the control gains focus.
+         */
+        "onSl-focus"?: (event: CustomEvent<any>) => void;
+        /**
+          * Emitted when the control receives input.
+         */
+        "onSl-input"?: (event: CustomEvent<any>) => void;
+        /**
+          * A pattern to validate input against.
+         */
+        "pattern"?: string;
+        /**
+          * Set to true to draw a pill-style input with rounded edges.
+         */
+        "pill"?: boolean;
+        /**
+          * The input's placeholder text.
+         */
+        "placeholder"?: string;
+        /**
+          * Set to true to make the input readonly.
+         */
+        "readonly"?: boolean;
+        /**
+          * Set to true to make the input a required field.
+         */
+        "required"?: boolean;
+        /**
+          * The input's size.
+         */
+        "size"?: 'small' | 'medium' | 'large';
+        /**
+          * Enables spell checking on the input.
+         */
+        "spellcheck"?: boolean;
+        /**
+          * The input's step attribute.
+         */
+        "step"?: number;
+        /**
+          * Set to true to add a password toggle button for password inputs.
+         */
+        "togglePassword"?: boolean;
+        /**
+          * The input's type.
+         */
+        "type"?: 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'url';
+        /**
+          * The input's value attribute.
+         */
+        "value"?: string;
+    }
     interface SlSkeleton {
         /**
           * Determines which effect the skeleton will use.
@@ -2718,6 +2977,7 @@ declare namespace LocalJSX {
         "sl-rating": SlRating;
         "sl-responsive-embed": SlResponsiveEmbed;
         "sl-select": SlSelect;
+        "sl-shady-input": SlShadyInput;
         "sl-skeleton": SlSkeleton;
         "sl-spinner": SlSpinner;
         "sl-switch": SlSwitch;
@@ -2765,6 +3025,7 @@ declare module "@stencil/core" {
             "sl-rating": LocalJSX.SlRating & JSXBase.HTMLAttributes<HTMLSlRatingElement>;
             "sl-responsive-embed": LocalJSX.SlResponsiveEmbed & JSXBase.HTMLAttributes<HTMLSlResponsiveEmbedElement>;
             "sl-select": LocalJSX.SlSelect & JSXBase.HTMLAttributes<HTMLSlSelectElement>;
+            "sl-shady-input": LocalJSX.SlShadyInput & JSXBase.HTMLAttributes<HTMLSlShadyInputElement>;
             "sl-skeleton": LocalJSX.SlSkeleton & JSXBase.HTMLAttributes<HTMLSlSkeletonElement>;
             "sl-spinner": LocalJSX.SlSpinner & JSXBase.HTMLAttributes<HTMLSlSpinnerElement>;
             "sl-switch": LocalJSX.SlSwitch & JSXBase.HTMLAttributes<HTMLSlSwitchElement>;
